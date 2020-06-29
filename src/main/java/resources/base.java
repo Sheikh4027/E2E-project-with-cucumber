@@ -21,11 +21,14 @@ public class base {
 	public Properties prop;
 public WebDriver initializeDriver() throws IOException
 {
+String currentDirectory = System.getProperty("user.dir");
+	FileInputStream fis=new FileInputStream(currentDirectory+"\\src\\main\\java\\resources\\data.properties");
+	FileInputStream fis1=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
 	
- prop= new Properties();
+/* prop= new Properties();
 FileInputStream fis=new FileInputStream("C:\\Users\\ahmad\\E2EProject\\src\\main\\java\\resources\\data.properties");
-
-prop.load(fis);
+*/
+prop.load(fis1);
 String browserName=prop.getProperty("browser");
 System.out.println(browserName);
 
